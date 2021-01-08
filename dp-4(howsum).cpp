@@ -16,7 +16,7 @@ bool howsum(int n,int m,int a[])
     for(int i=0; i<m; i++)
     {
         int r=n-a[i];
-        if(cansum(r,m,a)==true)
+        if(howsum(r,m,a)==true)
         {
             v.push_back(a[i]);
             check[n]=1;
@@ -38,7 +38,7 @@ int main()
     {
         cin>>a[i];
     }
-    if(cansum(n,m,a)==true){
+    if(howsum(n,m,a)==true){
             cout<<"yes"<<endl;
         for(int i=0;i<v.size();i++)cout<<v[i]<<" ";
         cout<<endl;
