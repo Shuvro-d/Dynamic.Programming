@@ -3,7 +3,7 @@
 using namespace std;
 int target;
 vector<vector<int> >v;
-vector<int>x;
+vector<int>x;                         ///this program works upto 10^5
 bool visit[10000];
 vector<int>u;
 bool bestsum(int n,int m,int a[])
