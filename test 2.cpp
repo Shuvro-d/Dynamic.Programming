@@ -2,21 +2,21 @@
 #define        ll     long long int
 using namespace std;
 int check[10000];
-stack<int>s;
-vector<int>save;
+stack<int>s;             //this stack is used to save the sum combination.
+vector<int>save;         // this vector is used to save the smallest combination.
 bool flag=false;
-bool howsum(int n,int m,int a[])
+bool bestsum(int n,int m,int a[])
 {
     if(n==0)
     {
         //cout<<"Hurrah"<<endl;
         flag=true;
-        stack<int>s2;
+        stack<int>s2;       //this stack s2 helps to copy the values of s into the vector.
         vector<int>vec;
         s2=s;
-        while(s2.size()>0)
-        {
-            int x=s2.top();
+        while(s2.size()>0)       //if stack s has smaller combination than vector then 
+        {                            // we replace the values of vector with stack's value
+            int x=s2.top();      
             vec.push_back(x);
             s2.pop();
         }
@@ -38,7 +38,7 @@ bool howsum(int n,int m,int a[])
         if(r>=0)
         {
             s.push(a[i]);
-            howsum(r,m,a);
+            bestsum(r,m,a);
         }
     }
     s.pop();
@@ -55,7 +55,7 @@ int main()
     {
         cin>>a[i];
     }
-    howsum(n,m,a);
+    bestsum(n,m,a);
     if(flag==true)
     {
         cout<<"yes"<<endl;
