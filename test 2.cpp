@@ -9,7 +9,7 @@ bool howsum(int n,int m,int a[])
 {
     if(n==0)
     {
-        cout<<"Hurrah"<<endl;
+        //cout<<"Hurrah"<<endl;
         flag=true;
         stack<int>s2;
         vector<int>vec;
