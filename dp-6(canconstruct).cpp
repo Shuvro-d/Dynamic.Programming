@@ -2,12 +2,14 @@
 #define        ll     long long int
 using namespace std;
 vector<string>vec;
+bool flag=false;
 bool constructstring(string target,vector<string>v)
 {
    if(target.size()==0){
     for(int i=0;i<vec.size();i++)cout<<vec[i]<<" ";    //prints the construction way
     cout<<endl;
     vec.pop_back();
+      flag=true;
     return true;
     }
     for(int i=0;i<v.size();i++){
@@ -38,8 +40,7 @@ int main()
             cin>>x;
             v.push_back(x);
         }
-        if(constructstring(s,v)==true)cout<<"Yes"<<endl;
-        else cout<<"no"<<endl;
+        if(flag==false) cout<<"no answer"<<endl;
     }
     return 0;
 }
