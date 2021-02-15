@@ -2,7 +2,7 @@
 #define        ll     long long int
 using namespace std;
 ll ara[1000][1000];
-int gridtraveler(ll m,ll n)
+ll gridtraveler(ll m,ll n)
 {
       if(m==1 and n==1)return 1;
       if(m==0 or n==0) return 0;
