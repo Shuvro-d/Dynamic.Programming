@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define        ll     long long int
 using namespace std;
-//memorization
+//memoization
 ll ara[1000];
 int fib(ll n)
 {
