@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define        ll     long long int
 using namespace std;
-bool flag=false;
+unordered_map<string,bool>dp;
 bool constructstring(string target,vector<string>v)
 {
     if(target.size()==0)
@@ -9,6 +9,8 @@ bool constructstring(string target,vector<string>v)
         flag=true;
         return true;
     }
+    if(dp.count(target)>0) return dp[target];
+    
     for(int i=0; i<v.size(); i++)
     {
         int found=target.find(v[i]);
@@ -17,9 +19,10 @@ bool constructstring(string target,vector<string>v)
             string s;
             s=target;
             s.erase(0,v[i].size());
-            if(constructstring(s,v)==true)return true;
+            if(constructstring(s,v)==true){ dp[target]=true; return true;}
         }
     }
+    dp[target]=false;
     return false;
 }
 int main()
